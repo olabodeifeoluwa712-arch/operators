@@ -1,33 +1,30 @@
 <?php
 
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
-$a = $_POST['firstName'];
-$b = $_POST['lastName'];
-$c= $_POST['score'];
-$d =$_POST['subject'];
-if(!empty($a) && !empty($b)&& !empty($c) && !empty($d)){
-    echo " You are welcome" ." " .$a ." ".$b ." " ."and you scored" ." " .$c  ." ". "in" ." ". $d . ".";
-}
- else{
-    echo "Pls obey the instruction";
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $a = $_POST['firstName'];
+    $b = $_POST['lastName'];
+    $c = $_POST['score'];
+    $d = $_POST['subject'];
+    if (!empty($a) && !empty($b) && !empty($c) && !empty($d)) {
+        echo " You are welcome" . " " . $a . " " . $b . " " . "and you scored" . " " . $c . " " . "in" . " " . $d . ".";
+    } else {
+        echo "Pls obey the instruction";
     }
 }
-if($c>=0 && $c<=59){
-echo "Your grade in". "".$d ." is F";
-}
-else if ( $c>=60 && $c <=69){
-    echo "Your grade in "  ." " .$d ." is D";
+if ($c >= 0 && $c <= 59) {
+    echo "Your grade in" . "" . $d . " is F";
+} else if ($c >= 60 && $c <= 69) {
+    echo "Your grade in " . " " . $d . " is D";
 
+} else if ($c >= 70 && $c <= 79) {
+    echo "Your grade in" . " " . $d . " is C ";
+} else if ($c >= 80 && $c <= 89) {
+    echo "Your grade in" . " " . $d . " is D ";
+} else {
+    echo "Your grade in" . " " . $d . " is A ";
 }
-else if ( $c>=70 && $c <=79){
-    echo  "Your grade in" ." " .$d ." is C ";
-}
-else if ( $c>=80 && $c <=89){
-    echo  "Your grade in" ." " .$d ." is D ";
-}
-else{
-    echo "Your grade in"  ." " .$d ." is A ";
-};
+;
+
 ?>
 
 
@@ -62,7 +59,7 @@ else{
                     name="firstName" id="score"></label>
             <label for="last name"><input type="text" required placeholder="Whats your lastname ? " name="lastName"
                     id="lastname"></label>
-            <label for="subject"><select name="subject" id="" required >
+            <label for="subject"><select name="subject" id="" required>
                     <option value="Mathematics">Mathematics </option>
                     <option value="English">English</option>
                     <option value="General Studies"> General Studies</option>
